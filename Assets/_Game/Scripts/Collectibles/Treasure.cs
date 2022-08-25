@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Treasure : CollectibleBase
 {
-    
+    protected override void Collect(Player player)
+    {
+        Debug.Log("Treasure Collected");
+    }
 }

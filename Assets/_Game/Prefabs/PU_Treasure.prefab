@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4863092089422365415}
   - component: {fileID: 4863092089422365412}
   - component: {fileID: 4863092089422365432}
-  - component: {fileID: 4863092089422365433}
+  - component: {fileID: -4339621725763471267}
   m_Layer: 0
-  m_Name: PU_Health
+  m_Name: PU_Treasure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 10fea5797014e5340a171cbfe45ee35a, type: 2}
+  - {fileID: 2100000, guid: 37098eb08f208794f85b64f643720e45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -115,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4863092089422365433
+--- !u!114 &-4339621725763471267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,19 +124,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4863092089422365410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1ccc174e9554172928b7a3fb0b404d5, type: 3}
+  m_Script: {fileID: 11500000, guid: b672123280c94f229b8e50ba52c8487e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 1
   OnCollect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4863092089422365433}
+      - m_Target: {fileID: -4339621725763471267}
         m_TargetAssemblyTypeName: MonoExtended, Assembly-CSharp
         m_MethodName: PlayVFXAtTargetParented
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 9131945085846806145, guid: a96fce258bc42f240be95cefcca1a121,
+          m_ObjectArgument: {fileID: 5637263620551038033, guid: afe86d1b55b9b0a45895d1c4384178e2,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
           m_IntArgument: 0
@@ -144,4 +144,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _speedDelta: 0.2
+  _scoreAdder: 10

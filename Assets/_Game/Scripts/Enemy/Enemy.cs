@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class Enemy : MonoExtended
 {
     [SerializeField]
-    int _damage = 1;
+    protected float _damage = 1;
 
     [Header("Events")]
     public UnityEvent<Player> OnHit;
@@ -27,7 +27,6 @@ public class Enemy : MonoExtended
     void OnCollisionEnter(Collision other)
     {
         Player player = other.gameObject.GetComponent<Player>();
-        Debug.Log(player);
         if (!player) return;
 
         HitPlayer(player);
@@ -36,6 +35,6 @@ public class Enemy : MonoExtended
 
     protected virtual void HitPlayer(Player player)
     {
-        player.Hurt(_damage);
+        player.Hurt((int) _damage);
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(TankController))]
@@ -7,10 +8,22 @@ public class Player : MonoExtended
     public static Player Instance;
     
     public int Health { get; private set; }
+    public bool Invincible
+    {
+        get => _invincible;
+        set
+        {
+            _invincible = value;
+            UpdateColor();
+        }
+    }
     
     [SerializeField]
     [Min(0)]
     int _maxHealth = 3;
+
+    [SerializeField]
+    Color _invincibleColor = Color.cyan;
 
     [Header("Events")]
     public UnityEvent OnHealthUpdate;
@@ -18,11 +31,13 @@ public class Player : MonoExtended
     public UnityEvent OnHurt;
     public UnityEvent OnDeath;
 
+    bool _invincible = false;
     TankController _tank;
+    Dictionary<Renderer, Color> _colors;
 
     void Awake()
     {
-        if (Instance != null)
+        if (Instance)
         {
             Destroy(gameObject);
             return;
@@ -30,8 +45,17 @@ public class Player : MonoExtended
 
         Instance = this;
         
-        _tank = GetComponent<TankController>();
         Health = _maxHealth;
+        _tank = GetComponent<TankController>();
+        CacheColors();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     public void Heal(int amount)
@@ -45,6 +69,8 @@ public class Player : MonoExtended
 
     public void Hurt(int amount)
     {
+        if (Invincible) return;
+        
         Health -= amount;
         OnHealthUpdate?.Invoke();
 
@@ -61,5 +87,25 @@ public class Player : MonoExtended
     {
         gameObject.SetActive(false);
         OnDeath?.Invoke();
+    }
+
+    void CacheColors()
+    {
+        _colors = new Dictionary<Renderer, Color>();
+        foreach (var rend in GetComponentsInChildren<Renderer>())
+        {
+            _colors.Add(rend, rend.material.color);
+        }
+    }
+
+    void UpdateColor()
+    {
+        Color? col = Invincible ? _invincibleColor : null;
+        foreach (var kvp in _colors)
+        {
+            Renderer rend = kvp.Key;
+            Color c = kvp.Value;
+            rend.material.color = col ?? c;
+        }
     }
 }

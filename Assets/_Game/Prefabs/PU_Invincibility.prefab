@@ -162,3 +162,19 @@ MonoBehaviour:
   _duration: 4
   _downDuration: 0.01
   _art: {fileID: 4726323390102634573}
+  OnCollect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1150029009346769529}
+        m_TargetAssemblyTypeName: MonoExtended, Assembly-CSharp
+        m_MethodName: PlayAudioClip2D
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 0206a3a4ed9888c4487784e0826482f4,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: SOAudioClip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

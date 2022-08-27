@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4a2b8302c8944f884e21e83e3b42d5a, type: 3}
-  m_Name: AC_Move
+  m_Name: AC_Death
   m_EditorClassIdentifier: 
-  Clip: {fileID: 0}
-  Volume: 1
+  Clip: {fileID: 8300000, guid: fb1b6de18b92ea542b70a48092eb1d19, type: 3}
+  Volume: 0.3

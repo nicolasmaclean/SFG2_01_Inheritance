@@ -2,8 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public abstract class PowerupBase : MonoBehaviour
+public abstract class PowerupBase : MonoExtended
 {
     [SerializeField]
     [Min(0)]
@@ -16,6 +17,9 @@ public abstract class PowerupBase : MonoBehaviour
     [SerializeField]
     GameObject _art;
 
+    [Header("Events")]
+    public UnityEvent OnCollect;
+
     protected abstract void PowerUp();
     protected abstract void PowerDown();
 
@@ -26,6 +30,8 @@ public abstract class PowerupBase : MonoBehaviour
         
         Hide();
         PowerUp();
+        
+        OnCollect?.Invoke();
         
         StartCoroutine(Coroutines.WaitThen(_duration, PowerDown));
         Destroy(gameObject, _duration + _downDuration);

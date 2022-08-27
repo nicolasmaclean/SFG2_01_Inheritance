@@ -144,4 +144,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4863092089422365433}
+        m_TargetAssemblyTypeName: MonoExtended, Assembly-CSharp
+        m_MethodName: PlayAudioClip2D
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 123dce8acc4661245bc79817c4c2d659,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: SOAudioClip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _speedDelta: 0.2

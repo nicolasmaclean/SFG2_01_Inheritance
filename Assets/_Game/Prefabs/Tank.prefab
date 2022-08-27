@@ -258,18 +258,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 3
+  _invincibleColor: {r: 0, g: 1, b: 1, a: 1}
   OnHealthUpdate:
     m_PersistentCalls:
       m_Calls: []
   OnHeal:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5819271932563758371}
+        m_TargetAssemblyTypeName: MonoExtended, Assembly-CSharp
+        m_MethodName: PlayAudioClip2D
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 123dce8acc4661245bc79817c4c2d659,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: SOAudioClip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnHurt:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5819271932563758371}
+        m_TargetAssemblyTypeName: MonoExtended, Assembly-CSharp
+        m_MethodName: PlayAudioClip2D
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 4d788f28ab5c3b549aa1e670696aef22,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: SOAudioClip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5819271932563758371}
+        m_TargetAssemblyTypeName: MonoExtended, Assembly-CSharp
+        m_MethodName: PlayAudioClip2D
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: f29f12e4141176343a0ee030ccec7f90,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: SOAudioClip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5819271932810206046
 GameObject:
   m_ObjectHideFlags: 0
